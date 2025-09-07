@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Todo List</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="app-header">
+      <h1>Todo</h1>
+    </header>
+    <main class="app" role="main">
+      <section class="todo-create" aria-labelledby="create-heading">
+        <h2 id="create-heading" class="visually-hidden">Create a new task</h2>
+        <form id="todo-form" aria-label="Add a new task" autocomplete="off">
+          <input
+            id="todo-input"
+            name="title"
+            type="text"
+            placeholder="What needs to be done?"
+            aria-label="Task title"
+          />
+          <button id="add-btn" type="submit" aria-label="Add task">Add</button>
+        </form>
+      </section>
+
+      <section class="todo-controls" aria-label="Filters and actions">
+        <div class="filters" role="tablist" aria-label="Filter tasks">
+          <button
+            role="tab"
+            data-filter="all"
+            aria-selected="true"
+            class="filter active"
+          >
+            All
+          </button>
+          <button
+            role="tab"
+            data-filter="active"
+            aria-selected="false"
+            class="filter"
+          >
+            Active
+          </button>
+          <button
+            role="tab"
+            data-filter="completed"
+            aria-selected="false"
+            class="filter"
+          >
+            Completed
+          </button>
+        </div>
+        <div class="actions">
+          <button id="clear-completed" type="button">Clear Completed</button>
+        </div>
+      </section>
+
+      <section class="todo-list-section" aria-labelledby="list-heading">
+        <h2 id="list-heading" class="visually-hidden">Task list</h2>
+        <ul
+          id="todo-list"
+          class="todo-list"
+          role="list"
+          aria-live="polite"
+        ></ul>
+      </section>
+
+      <footer class="app-footer" aria-live="polite">
+        <span id="items-left">0 items left</span>
+      </footer>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
